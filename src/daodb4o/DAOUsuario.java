@@ -2,6 +2,8 @@ package daodb4o;
 
 import java.util.List;
 
+import com.db4o.query.Candidate;
+import com.db4o.query.Evaluation;
 import com.db4o.query.Query;
 
 import modelo.Usuario;
@@ -72,9 +74,16 @@ public class DAOUsuario extends DAO<Usuario> {
 		return total;
 	}
 	
+	@SuppressWarnings("serial")
+	class Filtro  implements Evaluation {
+		private int n;
+		public Filtro (int n) {this.n=n;}
+		public void evaluate(Candidate candidate) {
+			Usuario u = (Usuario) candidate.getObject();
+			candidate.include( u.getPedidos().size()==n);
+		}
 
-
-	
+	}
 }
 
 

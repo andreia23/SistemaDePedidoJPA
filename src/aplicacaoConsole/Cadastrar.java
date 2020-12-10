@@ -6,8 +6,9 @@ package aplicacaoConsole;
  *
  */
 
+import modelo.Usuario;
 import fachada.Fachada;
-import modelo.Pessoa;
+
 
 
 public class Cadastrar {
@@ -15,23 +16,53 @@ public class Cadastrar {
 	public Cadastrar(){
 		try {
 			Fachada.inicializar();
+			Usuario u;
 			
 			System.out.println("cadastrando...");
-			Pessoa p;
-			p=Fachada.cadastrarPessoa("joao","988880000");
-			p=Fachada.cadastrarPessoa("joao","988881111");	
-			p=Fachada.cadastrarPessoa("maria","987882222");
-			p=Fachada.cadastrarPessoa("maria","988883333");
-			p=Fachada.cadastrarPessoa("maria","32471234");
-			p=Fachada.cadastrarPessoa("jose","987884444");
-			p=Fachada.cadastrarPessoa("paulo");
-			p=Fachada.cadastrarPessoa("ana");
+			u =Fachada.cadastrarUsuario("Tom Sousa", "0909", "9999999", "tom@ifpb", "8888", "Jampa", "Centro", "Rua tal", "68");
+			System.out.println(u);
+			
+			//TESTAR LOGIN
+//			u = Fachada2.login("tom@ifpb", "8888");
+//			System.out.println("pessoa logada =>" + Fachada2.getLogado());
+//			
+			//TESTAR REALIZAR PEDIDO COM ENDERECO CADASTRADO DO USUARIO
+//			Fachada2.realizarPedidoEnderecoUsuario(u.getEndereco(), 8, "Carne", 100.50,120.90);
+//			System.out.println("pedido feito com sucesso=>" + Fachada2.getLogado().getPedidos());
+			
+//			//TESTAR REALIZAR PEDIDO
+//			Fachada2.realizarPedido("Patos", "Centro", "Rua tal", "68", 10, "Peixe", 20.80, 25.90);
+//			System.out.println("pedido feito com sucesso=>" + Fachada2.getLogado().getPedidos());
+//			
+
+
+//			//TESTAR ALTERAR DADOS DO USUARIO
+//			System.out.println("alterando...");
+//			Fachada2.alterarDadosLogado("Mael","mael@IFPB","2222");
+//			
+			
+//			//TESTAR LOGOFF
+//			Fachada2.logoff();
+//			System.out.println("Logoff feito com sucesso");
+			
+			//TESTAR LISTAR PEDIDO POR USUARIO
+//			System.out.println(Fachada2.listarMeusPedidos());
+//			
+//			
+		
+		
 		} catch (Exception e) 	{
 			System.out.println(e.getMessage());
 		}
+		
+	
+		
+		
+		
 		finally {
 			Fachada.finalizar();
 		}
+
 		System.out.println("fim do programa");
 	}
 

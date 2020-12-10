@@ -41,7 +41,7 @@ public class DAOUsuario extends DAO<Usuario> {
 	}
 
 	public List<Usuario> readAll() {
-		TypedQuery<Usuario> q = manager.createQuery("select p from Usuario p order by p.codigousuario", Usuario.class);
+		TypedQuery<Usuario> q = manager.createQuery("select p from Usuario p", Usuario.class);
 		return q.getResultList();
 	}
 
@@ -52,7 +52,7 @@ public class DAOUsuario extends DAO<Usuario> {
 	 **********************************************************/
 	public List<Usuario> consultarUsuarios(String caracteres) {
 		TypedQuery<Usuario> q = manager.createQuery(
-				"select p from Usuario p where p.nomeUsuario like '%" + caracteres + "%' order by p.nome",
+				"select p from Usuario p where p.nomeUsuario like '%"+caracteres+"%' ",
 				Usuario.class);
 		return q.getResultList();
 	}
@@ -65,7 +65,7 @@ public class DAOUsuario extends DAO<Usuario> {
 	}
 
 	public int consultarTotalUsuarios() {
-		TypedQuery<Usuario> q = manager.createQuery("select count(*) from Usuario", Usuario.class);
+		TypedQuery<Usuario> q = manager.createQuery("select count(p) from Usuario p", Usuario.class);
 
 		return q.getFirstResult();
 	}

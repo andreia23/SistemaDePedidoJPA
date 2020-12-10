@@ -6,10 +6,10 @@ package aplicacaoConsole;
  *
  */
 
-
+import modelo.Pedido;
+import modelo.Usuario;
 import fachada.Fachada;
-import modelo.Pessoa;
-import modelo.Telefone;
+
 
 public class Listar {
 
@@ -17,21 +17,19 @@ public class Listar {
 		try {
 			Fachada.inicializar();
 			
-			System.out.println("Listagem de pessoas:");
-			for(Pessoa p : Fachada.listarPessoas())		
+			System.out.println("Listagem de usuários:");
+			for(Usuario p : Fachada.listarUsuarios())		
 				System.out.println(p);
 			
-			System.out.println("\nListagem de telefones:");
-			for(Telefone t : Fachada.listarTelefones())	
+			System.out.println("\nListagem de pedidos:");
+			for(Pedido t : Fachada.listarPedidos())	
 				System.out.println(t);
-			
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
-		}finally {
-			Fachada.finalizar();
 		}
+		Fachada.finalizar();
+		System.out.println("fim do programa");
 	}
-
 
 	//=================================================
 	public static void main(String[] args) {

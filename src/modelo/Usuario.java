@@ -1,17 +1,25 @@
 package modelo;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Transient;
+
+import daojpa.Trigger;
 
 @Entity
+@EntityListeners(Trigger.class) // CLASSE QUE IMPLEMENTA OS EVENTOS (TRIGGERS)
 public class Usuario {
 
 	@Id
@@ -22,10 +30,15 @@ public class Usuario {
 	private String fone;
 	private String email;
 	private String senha;
-	
+
+	@Transient
+	private int idade; // calculado
+	@Column(columnDefinition = "DATE")
+	private LocalDate nascimento = LocalDate.of(1990, 01, 01);
+
 	@ManyToOne
 	private Endereco endereco;
-	
+
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true, // default � false
 			fetch = FetchType.EAGER)
 	private ArrayList<Pedido> pedidos = new ArrayList<Pedido>();
@@ -107,6 +120,19 @@ public class Usuario {
 		this.pedidos = pedidos;
 	}
 
+	public int getIdade() {
+		return idade;
+	}
+
+	public void setIdade(int idade) {
+		this.idade = idade;
+	}
+
+	public LocalDate getNascimento() {
+		return nascimento;
+	}
+
+	
 	public void adicionar(Pedido p) {
 		p.setUsuario(this);
 		this.pedidos.add(p);
@@ -128,6 +154,7 @@ public class Usuario {
 	@Override
 	public String toString() {
 		String classe = getClass().getSimpleName() + ":";
+		SimpleDateFormat f = new SimpleDateFormat("dd/MM/yyyy");
 		String texto = String.format("%5s", classe) + " nome = " + String.format("%5s", nomeUsuario) + ", cpf = "
 				+ String.format("%5s", cpf) + ", email = " + String.format("%5s", email) + ", senha = "
 				+ String.format("%5s", senha);
@@ -135,10 +162,10 @@ public class Usuario {
 		texto += ", pedidos:";
 		for (Pedido p : pedidos)
 			texto += p.getCodigoPedido() + ", ";
-
+		
+		texto+="----- idade="+idade;
 		return texto;
 	}
-	
 
 	@Override
 	public int hashCode() {
@@ -162,14 +189,11 @@ public class Usuario {
 		if (codigoUsuario != other.codigoUsuario)
 			return false;
 		if (cpf == null) {
-			if (other.cpf != null)	
+			if (other.cpf != null)
 				return false;
-		} 
-		else 
-			if (!cpf.equals(other.cpf))	
-				return false;
+		} else if (!cpf.equals(other.cpf))
+			return false;
 
-		
 		return true;
 	}
 

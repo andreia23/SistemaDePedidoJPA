@@ -6,6 +6,7 @@
 package daojpa;
 
 import java.lang.reflect.ParameterizedType;
+import java.sql.Connection;
 import java.util.HashMap;
 import java.util.List;
 
@@ -17,6 +18,7 @@ import javax.persistence.TypedQuery;
 public abstract class DAO<T> implements DAOInterface<T> {
 	protected static EntityManager manager;
 	protected static EntityManagerFactory factory;
+	protected static Connection con;
 
 	public DAO() {
 	}
@@ -89,7 +91,12 @@ public abstract class DAO<T> implements DAOInterface<T> {
 		return manager.createQuery("select x from " + type.getSimpleName() + " x", type).setFirstResult(firstResult - 1)
 				.setMaxResults(maxResults).getResultList();
 	}
-
+	public static Connection getConnection() throws Exception {
+		if (con==null) 
+			throw new Exception("conex�o inexistente");
+		
+		return con;
+	}
 	// ----------------------- TRANSA��O ----------------------
 	public static void begin() {
 		if (!manager.getTransaction().isActive())

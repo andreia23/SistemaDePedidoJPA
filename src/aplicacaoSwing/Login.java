@@ -15,7 +15,7 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-import fachada.Fachada2;
+import fachada.Fachada;
 import modelo.Usuario;
 
 
@@ -94,7 +94,7 @@ public class Login extends JFrame {
 				try {
 					String email = textField.getText();
 					String senha = new String( passwordField.getPassword() );
-					Usuario usuario = Fachada2.login(email,senha);
+					Usuario usuario = Fachada.login(email,senha);
 
 					if (usuario!=null)
 						label_2.setText("bem vindo(a): "+usuario.getNomeUsuario());
@@ -122,7 +122,7 @@ public class Login extends JFrame {
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				try {
-					Fachada2.logoff();
+					Fachada.logoff();
 				} catch (Exception e) {
 					label_2.setText(e.getMessage());
 				}

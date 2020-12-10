@@ -39,7 +39,7 @@ public class DAOPedido extends DAO<Pedido> {
 	}
 
 	public int consultarTotalPedidos() {
-		TypedQuery<Usuario> q = manager.createQuery("select count(*) from Usuario", Usuario.class);
+		TypedQuery<Pedido> q = manager.createQuery("select count(p) from Pedido p", Pedido.class);
 
 		return q.getFirstResult();
 	}

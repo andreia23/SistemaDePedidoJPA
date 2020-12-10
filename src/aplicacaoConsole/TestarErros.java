@@ -7,8 +7,9 @@ package aplicacaoConsole;
  */
 
 import fachada.Fachada;
-import modelo.Pessoa;
-import modelo.Telefone;
+import fachada.Fachada;
+import modelo.Pedido;
+import modelo.Usuario;
 
 
 public class TestarErros {
@@ -16,25 +17,22 @@ public class TestarErros {
 	public TestarErros(){
 		Fachada.inicializar();
 		
-		Pessoa p;
-		Telefone t;
+		Usuario p;
+		Pedido t;
 		
-		try {p = Fachada.cadastrarPessoa("joao");   
+		try {p = Fachada.cadastrarUsuario("Tom Sousa", "0909", "9999999", "tom@ifpb", "8888", "Jampa", "Centro", "Rua tal", "68");
 		}catch (Exception e) {System.out.println(e.getMessage());}
 		
-		try {p = Fachada.cadastrarPessoa("joao", "988880000");
-		}catch (Exception e) {System.out.println(e.getMessage());}
-		
-		try {p = Fachada.alterarPessoa("joao", "joao");
+		try {Fachada.alterarPedido(3, "Vale", "Inacio", "09");
 		}catch (Exception e) {System.out.println(e.getMessage());}
 
-		try {t = Fachada.alterarTelefone("00000000", "988889999");
+		try {Fachada.alterarDadosNaoLogado("0909", "Andreia", "andreia@ifpb", "9999");
 		}catch (Exception e) {System.out.println(e.getMessage());}
 
-		try {Fachada.excluirPessoa("xxxxxxx");
+		try {Fachada.excluirUsuario("6687");
 		}catch (Exception e) {System.out.println(e.getMessage());}
 		
-		try {Fachada.excluirTelefone("00000000");
+		try {Fachada.excluirPedidoPessoa(2);
 		}catch (Exception e) {System.out.println(e.getMessage());}
 
 		Fachada.finalizar();

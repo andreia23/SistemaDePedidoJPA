@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.Version;
 
 @Entity
 public class Produto {
@@ -15,6 +16,8 @@ public class Produto {
 	private int quantidadeProduto;
 	private String nomeProduto;
 	private Double valorProduto;
+    @Version
+	private int versao;
 
 	@ManyToOne
 	private Pedido pedido;
@@ -76,11 +79,17 @@ public class Produto {
 
 	@Override
 	public String toString() {
-		String classe = getClass().getSimpleName() + ":";
-		String texto = String.format("%5s", classe) + "  NomeProduto = " + nomeProduto;
-
-		return texto;
-
+		return "Produto [idProduto=" + idProduto + ", quantidadeProduto=" + quantidadeProduto + ", nomeProduto="
+				+ nomeProduto + ", valorProduto=" + valorProduto + ", versão=" + versao + ", pedido=" + pedido + "]";
 	}
+
+//	@Override
+//	public String toString() {
+//		String classe = getClass().getSimpleName() + ":";
+//		String texto = String.format("%5s", classe) + "  NomeProduto = " + nomeProduto;
+//
+//		return texto;
+//
+//	}
 
 }

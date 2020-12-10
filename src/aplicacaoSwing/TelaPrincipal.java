@@ -22,7 +22,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 
-import fachada.Fachada2;
+import fachada.Fachada;
 import modelo.Pedido;
 import modelo.Usuario;
 
@@ -35,9 +35,9 @@ public class TelaPrincipal {
 	private JMenuItem listarUsuarios;
 	private JMenuItem listarPedidos;
 	private JMenuItem mntmCadastrar;
-	private JMenuItem mntmCriar;
 	private JMenu mnListagem;
 	private JMenu mnPessoa;
+	private JMenu mnRelatorio;
 
 	/**
 	 * Launch the application.
@@ -71,13 +71,13 @@ public class TelaPrincipal {
 		frame.addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowOpened(WindowEvent arg0) {
-				Fachada2.inicializar();
+				Fachada.inicializar();
 				JOptionPane.showMessageDialog(null, "sistema inicializado !");
 			}
 
 			@Override
 			public void windowClosing(WindowEvent e) {
-				Fachada2.finalizar();
+				Fachada.finalizar();
 				JOptionPane.showMessageDialog(null, "sistema finalizado !");
 			}
 		});
@@ -114,7 +114,7 @@ public class TelaPrincipal {
 		itemLogff.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				try {
-					Fachada2.logoff();
+					Fachada.logoff();
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -126,6 +126,7 @@ public class TelaPrincipal {
 		mntmCadastrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				TelaCadastroUsuario j = new TelaCadastroUsuario();
+				
 			}
 
 		});
@@ -137,7 +138,7 @@ public class TelaPrincipal {
 		listarUsuarios = new JMenuItem("Usuários");
 		listarUsuarios.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				List<Usuario> lista = Fachada2.listarUsuarios();
+				List<Usuario> lista = Fachada.listarUsuarios();
 				String texto = "Listagem de Usuários: \n";
 				if (lista.isEmpty())
 					texto += "n�o tem usuários cadastrado\n";
@@ -154,7 +155,7 @@ public class TelaPrincipal {
 		listarPedidos = new JMenuItem("Pedidos");
 		listarPedidos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				List<Pedido> lista = Fachada2.listarPedidos();
+				List<Pedido> lista = Fachada.listarPedidos();
 				String texto = "Listagem de Pedidos: \n";
 				if (lista.isEmpty())
 					texto += "n�o tem Pedidos cadastrado\n";
@@ -167,15 +168,9 @@ public class TelaPrincipal {
 			}
 		});
 		mnListagem.add(listarPedidos);
-//		mnConsulta.addMouseListener(new MouseAdapter() {
-//			@Override
-//			public void mouseClicked(MouseEvent arg0) {
-//				TelaConsulta j = new TelaConsulta();
-//				j.setVisible(true);
-//
-//			
-//			}
-//		});
+		
+		mnRelatorio = new JMenu("Relatório");
+		menuBar.add(mnRelatorio);
 
 	}
 }

@@ -1,18 +1,18 @@
 package aplicacaoTempo;
 
-import java.io.FileWriter;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.List;
 
 import fachada.Fachada;
-import modelo.Pessoa;
+import fachada.Fachada;
+import modelo.Usuario;
 
 public class MedirTempo {
 
 	public static void main(String[] args) {
 		LocalDateTime hinicial, hfinal;
-		String nome, telefone;
+		String nome, cpf,fone, email,senha,cidade,bairro,rua,numero;
 
 		Fachada.inicializar();
 		try{
@@ -20,17 +20,24 @@ public class MedirTempo {
 //			arquivo.write("\n teste:");
 
 			hinicial = LocalDateTime.now();
-			System.out.println("\ninicio da gravação " + hinicial);
+			System.out.println("\ninicio da gravaï¿½ï¿½o " + hinicial);
 			
 			for (int i = 1; i<=1000; i++){
 				nome = "seu nome"+i;
-				telefone = "numero da matricula"+i;
-				Fachada.cadastrarPessoa(nome,telefone);
+				cpf ="cpf"+ i;
+				fone ="fone"+i;
+				email = "email"+i;
+				senha="senha"+i;
+				cidade="cidade"+i;
+				bairro="bairro"+i;
+				rua="rua"+i;
+				numero="numero"+i;
+				Fachada.cadastrarUsuario(nome, cpf,fone, email,senha,cidade,bairro,rua,numero);
 			}
-			System.out.println("fim da gravação    " + LocalDateTime.now());			
+			System.out.println("fim da gravaï¿½ï¿½o    " + LocalDateTime.now());			
 
 			System.out.println("\n\ninicio da consulta =  " +  LocalDateTime.now());	
-			List<Pessoa> s = Fachada.listarPessoas();
+			List<Usuario> s = Fachada.listarUsuarios();
 			System.out.println(s.size());
 			hfinal = LocalDateTime.now();
 			System.out.println("fim da consulta =     " + hfinal);

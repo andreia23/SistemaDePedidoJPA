@@ -8,7 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-import fachada.Fachada2;
+import fachada.Fachada;
 
 public class TelaCadastroUsuario {
 
@@ -180,8 +180,8 @@ public class TelaCadastroUsuario {
 					String bairro = bairroField.getText();
 					String rua = ruaField.getText();
 					String numero = numeroField.getText();
-					Fachada2.cadastrarUsuario(nome, cpf, fone, email, senha,cidade,bairro,rua,numero);
-					label2.setText("Usuario cadastrada");
+					Fachada.cadastrarUsuario(nome, cpf, fone, email, senha,cidade,bairro,rua,numero);
+					label2.setText("Usuario cadastrado");
 					}
 				} catch (Exception e) {
 					label2.setText(e.getMessage());
