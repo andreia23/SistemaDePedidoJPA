@@ -12,9 +12,9 @@ public class Produto {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idProduto;
-	private Integer quantidadeProduto;
+	private int quantidadeProduto;
 	private String nomeProduto;
-	private Float valorProduto;
+	private Double valorProduto;
 
 	@ManyToOne
 	private Pedido pedido;
@@ -23,7 +23,7 @@ public class Produto {
 
 	}
 
-	public Produto(Integer quantidadeProduto, String nomeProduto, Float valorProduto) {
+	public Produto(Integer quantidadeProduto, String nomeProduto, Double valorProduto) {
 		super();
 		this.quantidadeProduto = quantidadeProduto;
 		this.nomeProduto = nomeProduto;
@@ -50,11 +50,11 @@ public class Produto {
 		this.nomeProduto = nomeProduto;
 	}
 
-	public Float getValorProduto() {
+	public Double getValorProduto() {
 		return valorProduto;
 	}
 
-	public void setValorProduto(Float valorProduto) {
+	public void setValorProduto(Double valorProduto) {
 		this.valorProduto = valorProduto;
 	}
 

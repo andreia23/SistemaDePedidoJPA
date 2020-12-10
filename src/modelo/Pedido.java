@@ -17,7 +17,7 @@ public class Pedido {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer codigoPedido;
-	private Float valorPedido;
+	private Double valorPedido;
 
 	@ManyToOne
 	private Usuario usuario;
@@ -33,7 +33,7 @@ public class Pedido {
 
 	}
 
-	public Pedido(Float valorPedido) {
+	public Pedido(Double valorPedido) {
 		super();
 		this.valorPedido = valorPedido;
 	}
@@ -62,11 +62,11 @@ public class Pedido {
 		this.enderecoEntrega = enderecoEntrega;
 	}
 
-	public Float getValorPedido() {
+	public Double getValorPedido() {
 		return valorPedido;
 	}
 
-	public void setValorPedido(Float valorPedido) {
+	public void setValorPedido(Double valorPedido) {
 		this.valorPedido = valorPedido;
 	}
 

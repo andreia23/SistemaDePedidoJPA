@@ -18,22 +18,29 @@ public class CadastrarUsuario {
 			Fachada2.inicializar();
 			Usuario u;
 			
-			System.out.println("cadastrando...");
-//			u =Fachada2.cadastrarUsuario("Tom Sousa","0909","12/09/2001","tom@ifpb","8888");
+//			System.out.println("cadastrando...");
+//			u =Fachada2.cadastrarUsuario("Tom Sousa", "0909", "9999999", "tom@ifpb", "8888", "Jampa", "Centro", "Rua tal", "68");
 //			System.out.println(u);
 			
-//			//TESTAR LOGIN
-//			u = Fachada2.login("mael@IFPB", "2222");
-//			System.out.println("pessoa logada =>" + Fachada2.getLogado());
+			//TESTAR LOGIN
+			u = Fachada2.login("tom@ifpb", "8888");
+			System.out.println("pessoa logada =>" + Fachada2.getLogado());
+			
+			//TESTAR REALIZAR PEDIDO COM ENDERECO CADASTRADO DO USUARIO
+			Fachada2.realizarPedidoEnderecoUsuario(u.getEndereco(), 8, "Carne", 100.50,120.90);
+			System.out.println("pedido feito com sucesso=>" + Fachada2.getLogado().getPedidos());
+			
+//			//TESTAR REALIZAR PEDIDO
+//			Fachada2.realizarPedido("Patos", "Centro", "Rua tal", "68", 10, "Peixe", 20.80, 25.90);
+//			System.out.println("pedido feito com sucesso=>" + Fachada2.getLogado().getPedidos());
 //			
+
+
 //			//TESTAR ALTERAR DADOS DO USUARIO
 //			System.out.println("alterando...");
 //			Fachada2.alterarDadosLogado("Mael","mael@IFPB","2222");
 //			
-//			//TESTAR REALIZAR PEDIDO
-//			Fachada2.realizarPedido("PB","Lucena","Vale","Josefa","23");
-//			System.out.println("pedido feito com sucesso=>" + Fachada2.getLogado().getPedidos());
-//			
+			
 //			//TESTAR LOGOFF
 //			Fachada2.logoff();
 //			System.out.println("Logoff feito com sucesso");

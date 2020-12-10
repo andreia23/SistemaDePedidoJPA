@@ -41,7 +41,7 @@ public class DAOUsuario extends DAO<Usuario> {
 	}
 
 	public List<Usuario> readAll() {
-		TypedQuery<Usuario> q = manager.createQuery("select p from Usuario p order by p.id", Usuario.class);
+		TypedQuery<Usuario> q = manager.createQuery("select p from Usuario p order by p.codigousuario", Usuario.class);
 		return q.getResultList();
 	}
 
