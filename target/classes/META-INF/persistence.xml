@@ -11,17 +11,11 @@
 		<properties>
 			<property name="javax.persistence.jdbc.driver"
 				value="org.postgresql.Driver" />
-			<!-- <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/loja" 
-				/> -->
-			<property name="javax.persistence.jdbc.url"
-				value="jdbc:postgresql://localhost:5432/projetoPOB" />
-			<property name="javax.persistence.jdbc.user"
-				value="postgres" />
-			<property name="javax.persistence.jdbc.password"
-				value="andreia" />
-			<property
-				name="javax.persistence.schema-generation.database.action"
-				value="create" />
+<!-- 			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://54.94.169.84:5432/projeto2"/> -->
+			<property name="javax.persistence.jdbc.url"	value="jdbc:postgresql://localhost:5432/projeto_POB2" />
+			<property name="javax.persistence.jdbc.user" value="postgres" />
+			<property name="javax.persistence.jdbc.password" value="andreia" />
+			<property name="javax.persistence.schema-generation.database.action" value="create" />
 			<property
 				name="javax.persistence.schema-generation.scripts.action"
 				value="create" />

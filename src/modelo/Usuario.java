@@ -14,12 +14,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import javax.persistence.Transient;
 
 import daojpa.Trigger;
 
 @Entity
 @EntityListeners(Trigger.class) // CLASSE QUE IMPLEMENTA OS EVENTOS (TRIGGERS)
+@Table(name="Usuario20182370030")
 public class Usuario {
 
 	@Id
