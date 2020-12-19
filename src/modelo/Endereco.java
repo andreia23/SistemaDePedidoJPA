@@ -6,28 +6,36 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.OneToMany;
-import javax.persistence.Table;
+
+import org.eclipse.persistence.nosql.annotations.DataFormatType;
+import org.eclipse.persistence.nosql.annotations.NoSql;
 
 @Entity
-@Table(name="Endereco20182370030")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)	//Obrigatorio para mongodb (heran�a)
+@NoSql(dataFormat=DataFormatType.MAPPED)  //obrigatorio para mongodb
 public class Endereco {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int codEndereco;
+	@GeneratedValue
+	private String codEndereco;
 	private String cidade;
 	private String bairro;
 	private String rua;
 	private String numero;
 
-	@OneToMany(mappedBy = "endereco", cascade = CascadeType.ALL, orphanRemoval = true, // default � false
-			fetch = FetchType.EAGER)
+	@OneToMany(	mappedBy="endereco", 
+			cascade= {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE}, 
+			orphanRemoval=true,    //mongodb nao utiliza este parametro
+			fetch=FetchType.LAZY)  //obrigatorio no mongodb
 	private ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
 
-	@OneToMany(mappedBy = "enderecoEntrega", cascade = CascadeType.ALL, orphanRemoval = true, // default � false
-			fetch = FetchType.EAGER)
+	@OneToMany(	mappedBy="enderecoEntrega", 
+			cascade= {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE}, 
+			orphanRemoval=true,    //mongodb nao utiliza este parametro
+			fetch=FetchType.LAZY)  //obrigatorio no mongodb
 	private ArrayList<Pedido> pedidos = new ArrayList<Pedido>();
 
 	public Endereco() {
@@ -42,11 +50,11 @@ public class Endereco {
 		this.numero = numero;
 	}
 
-	public Integer getCodEndereco() {
+	public String getCodEndereco() {
 		return codEndereco;
 	}
 
-	public void setCodEndereco(Integer codEndereco) {
+	public void setCodEndereco(String codEndereco) {
 		this.codEndereco = codEndereco;
 	}
 
@@ -98,10 +106,7 @@ public class Endereco {
 		this.usuarios = usuarios;
 	}
 
-	public void setCodEndereco(int codEndereco) {
-		this.codEndereco = codEndereco;
-	}
-	
+
 	public void adicionarPedido(Pedido pedido) {
 		pedido.setEnderecoEntrega(this);
 		this.pedidos.add(pedido);

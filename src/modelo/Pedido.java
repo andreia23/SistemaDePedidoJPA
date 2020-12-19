@@ -3,22 +3,28 @@ package modelo;
 import java.util.ArrayList;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.Table;
+
+import org.eclipse.persistence.nosql.annotations.DataFormatType;
+import org.eclipse.persistence.nosql.annotations.NoSql;
 
 @Entity
-@Table(name="Pedido20182370030")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)	//Obrigatorio para mongodb (heran�a)
+@NoSql(dataFormat=DataFormatType.MAPPED)     //obrigatorio mongodb
 public class Pedido {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer codigoPedido;
+	@GeneratedValue
+	@Column(name="_id")		//nome obrigatorio no mongodb
+	private String codigoPedido;
 	private Double valorPedido;
 
 	@ManyToOne
@@ -27,8 +33,10 @@ public class Pedido {
 	@ManyToOne
 	private Endereco enderecoEntrega;
 
-	@OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL, orphanRemoval = true, // default � false
-			fetch = FetchType.EAGER)
+	@OneToMany(	mappedBy="pedido", 
+			cascade= {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE}, 
+			orphanRemoval=true,    //mongodb nao utiliza este parametro
+			fetch=FetchType.LAZY)
 	private ArrayList<Produto> produtos = new ArrayList<Produto>();
 
 	public Pedido() {
@@ -40,11 +48,11 @@ public class Pedido {
 		this.valorPedido = valorPedido;
 	}
 
-	public Integer getCodigoPedido() {
+	public String getCodigoPedido() {
 		return codigoPedido;
 	}
 
-	public void setCodigoPedido(Integer codigoPedido) {
+	public void setCodigoPedido(String codigoPedido) {
 		this.codigoPedido = codigoPedido;
 	}
 

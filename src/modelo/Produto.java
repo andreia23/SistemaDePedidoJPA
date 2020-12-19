@@ -1,20 +1,23 @@
 package modelo;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.Table;
 import javax.persistence.Version;
 
+import org.eclipse.persistence.nosql.annotations.DataFormatType;
+import org.eclipse.persistence.nosql.annotations.NoSql;
+
 @Entity
-@Table(name="Produto20182370030")
+@NoSql(dataFormat=DataFormatType.MAPPED)     //obrigatorio mongodb
 public class Produto {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idProduto;
+	@GeneratedValue
+	@Column(name="_id")		//nome obrigatorio no mongodb
+	private String idProduto;
 	private int quantidadeProduto;
 	private String nomeProduto;
 	private Double valorProduto;
@@ -35,11 +38,11 @@ public class Produto {
 		this.valorProduto = valorProduto;
 	}
 
-	public Integer getIdProduto() {
+	public String getIdProduto() {
 		return idProduto;
 	}
 
-	public void setIdProduto(Integer idProduto) {
+	public void setIdProduto(String idProduto) {
 		this.idProduto = idProduto;
 	}
 

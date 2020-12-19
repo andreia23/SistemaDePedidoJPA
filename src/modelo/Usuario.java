@@ -10,23 +10,28 @@ import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.Table;
 import javax.persistence.Transient;
+
+import org.eclipse.persistence.nosql.annotations.DataFormatType;
+import org.eclipse.persistence.nosql.annotations.NoSql;
 
 import daojpa.Trigger;
 
 @Entity
 @EntityListeners(Trigger.class) // CLASSE QUE IMPLEMENTA OS EVENTOS (TRIGGERS)
-@Table(name="Usuario20182370030")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)	//Obrigatorio para mongodb (heran�a)
+@NoSql(dataFormat=DataFormatType.MAPPED)  //obrigatorio para mongodb
 public class Usuario {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer codigoUsuario;
+	@GeneratedValue
+	@Column(name="_id")		//obrigatorio no mongodb
+	private String codigoUsuario;
 	private String nomeUsuario;
 	private String cpf;
 	private String fone;
@@ -35,14 +40,16 @@ public class Usuario {
 
 	@Transient
 	private int idade; // calculado
-	@Column(columnDefinition = "DATE")
+	@Column(columnDefinition = "TIMESTAMP")	  //tipo obrigatorio no mongodb
 	private LocalDate nascimento = LocalDate.of(1990, 01, 01);
 
 	@ManyToOne
 	private Endereco endereco;
 
-	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true, // default � false
-			fetch = FetchType.EAGER)
+	@OneToMany(	mappedBy="usuario", 
+			cascade= {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE}, 
+			orphanRemoval=true,    //mongodb nao utiliza este parametro
+			fetch=FetchType.LAZY)  //obrigatorio no mongodb
 	private ArrayList<Pedido> pedidos = new ArrayList<Pedido>();
 
 	public Usuario() {
@@ -106,11 +113,11 @@ public class Usuario {
 		this.senha = senha;
 	}
 
-	public Integer getCodigoUsuario() {
+	public String getCodigoUsuario() {
 		return codigoUsuario;
 	}
 
-	public void setCodigoUsuario(Integer codigoUsuario) {
+	public void setCodigoUsuario(String codigoUsuario) {
 		this.codigoUsuario = codigoUsuario;
 	}
 
@@ -169,15 +176,15 @@ public class Usuario {
 		return texto;
 	}
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + codigoUsuario;
-		result = prime * result + ((cpf == null) ? 0 : cpf.hashCode());
-		result = prime * result + ((pedidos == null) ? 0 : pedidos.hashCode());
-		return result;
-	}
+//	@Override
+//	public int hashCode() {
+//		final int prime = 31;
+//		String result = 1;
+//		result = prime * result + codigoUsuario;
+//		result = prime * result + ((cpf == null) ? 0 : cpf.hashCode());
+//		result = prime * result + ((pedidos == null) ? 0 : pedidos.hashCode());
+//		return result;
+//	}
 
 	@Override
 	public boolean equals(Object obj) {

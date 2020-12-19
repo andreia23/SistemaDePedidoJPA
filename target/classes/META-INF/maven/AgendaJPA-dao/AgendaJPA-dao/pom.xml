@@ -40,6 +40,22 @@
 			<artifactId>eclipselink</artifactId>
 			<version>2.7.7</version>
 		</dependency>
+		
+		<dependency>
+			<groupId>org.eclipse.persistence</groupId>
+			<artifactId>org.eclipse.persistence.nosql</artifactId>
+			<version>2.7.7</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mongodb</groupId>
+			<artifactId>mongo-java-driver</artifactId>
+			<version>3.12.7</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.resource</groupId>
+			<artifactId>connector-api</artifactId>
+			<version>1.5</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.hibernate</groupId>
