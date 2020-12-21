@@ -338,23 +338,23 @@ public class Fachada {
 	 * compila relat�rio e abre a janela de visualiza��o
 	 * 
 	 * **********************************************************/
-	public static void gerarRelatorioJasper(String arqjrxml) throws Exception {
-		try {
-			
-			InputStream istream = Fachada.class.getClassLoader().getResourceAsStream("jasperreport\\"+arqjrxml);
-			JasperReport report = JasperCompileManager.compileReport(istream);
-			
-			HashMap<String,Object>  parametros = new HashMap<>();   //tem que ter mesmo vazio
-			Connection con = DAO.getConnection();
-			
-			JasperPrint print = JasperFillManager.fillReport(report, parametros, con);
-			JasperViewer.viewReport(print, false);  //false n�o fecha a janela principal da aplica��o
-		}
-		catch(JRException e) {
-			throw new Exception ("erro de relat�rio:"+e.getMessage());
-		}
-	
-	}
+//	public static void gerarRelatorioJasper(String arqjrxml) throws Exception {
+//		try {
+//			
+//			InputStream istream = Fachada.class.getClassLoader().getResourceAsStream("jasperreport\\"+arqjrxml);
+//			JasperReport report = JasperCompileManager.compileReport(istream);
+//			
+//			HashMap<String,Object>  parametros = new HashMap<>();   //tem que ter mesmo vazio
+//			Connection con = DAO.getConnection();
+//			
+//			JasperPrint print = JasperFillManager.fillReport(report, parametros, con);
+//			JasperViewer.viewReport(print, false);  //false n�o fecha a janela principal da aplica��o
+//		}
+//		catch(JRException e) {
+//			throw new Exception ("erro de relat�rio:"+e.getMessage());
+//		}
+//	
+//	}
 }
 
 

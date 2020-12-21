@@ -3,6 +3,7 @@ package modelo;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -20,11 +21,11 @@ import javax.persistence.Transient;
 import org.eclipse.persistence.nosql.annotations.DataFormatType;
 import org.eclipse.persistence.nosql.annotations.NoSql;
 
-import daojpa.Trigger;
+import daojpa.DAOUsuario;
+
 
 @Entity
-@EntityListeners(Trigger.class) // CLASSE QUE IMPLEMENTA OS EVENTOS (TRIGGERS)
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)	//Obrigatorio para mongodb (heran�a)
+@EntityListeners(DAOUsuario.class) // CLASSE QUE IMPLEMENTA OS EVENTOS (TRIGGERS)
 @NoSql(dataFormat=DataFormatType.MAPPED)  //obrigatorio para mongodb
 public class Usuario {
 
@@ -38,11 +39,6 @@ public class Usuario {
 	private String email;
 	private String senha;
 
-	@Transient
-	private int idade; // calculado
-	@Column(columnDefinition = "TIMESTAMP")	  //tipo obrigatorio no mongodb
-	private LocalDate nascimento = LocalDate.of(1990, 01, 01);
-
 	@ManyToOne
 	private Endereco endereco;
 
@@ -50,7 +46,12 @@ public class Usuario {
 			cascade= {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE}, 
 			orphanRemoval=true,    //mongodb nao utiliza este parametro
 			fetch=FetchType.LAZY)  //obrigatorio no mongodb
-	private ArrayList<Pedido> pedidos = new ArrayList<Pedido>();
+	private List<Pedido> pedidos= new ArrayList<>();
+	
+//	@Transient
+//	private int idade; // calculado
+//	@Column(columnDefinition = "TIMESTAMP")	  //tipo obrigatorio no mongodb
+//	private LocalDate nascimento = LocalDate.of(1990, 01, 01);
 
 	public Usuario() {
 
@@ -121,7 +122,7 @@ public class Usuario {
 		this.codigoUsuario = codigoUsuario;
 	}
 
-	public ArrayList<Pedido> getPedidos() {
+	public List<Pedido> getPedidos() {
 		return pedidos;
 	}
 
@@ -129,17 +130,17 @@ public class Usuario {
 		this.pedidos = pedidos;
 	}
 
-	public int getIdade() {
-		return idade;
-	}
-
-	public void setIdade(int idade) {
-		this.idade = idade;
-	}
-
-	public LocalDate getNascimento() {
-		return nascimento;
-	}
+//	public int getIdade() {
+//		return idade;
+//	}
+//
+//	public void setIdade(int idade) {
+//		this.idade = idade;
+//	}
+//
+//	public LocalDate getNascimento() {
+//		return nascimento;
+//	}
 
 	
 	public void adicionar(Pedido p) {
@@ -172,7 +173,7 @@ public class Usuario {
 		for (Pedido p : pedidos)
 			texto += p.getCodigoPedido() + ", ";
 		
-		texto+="----- idade="+idade;
+//		texto+="----- idade="+idade;
 		return texto;
 	}
 
@@ -185,25 +186,25 @@ public class Usuario {
 //		result = prime * result + ((pedidos == null) ? 0 : pedidos.hashCode());
 //		return result;
 //	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Usuario other = (Usuario) obj;
-		if (codigoUsuario != other.codigoUsuario)
-			return false;
-		if (cpf == null) {
-			if (other.cpf != null)
-				return false;
-		} else if (!cpf.equals(other.cpf))
-			return false;
-
-		return true;
-	}
+//
+//	@Override
+//	public boolean equals(Object obj) {
+//		if (this == obj)
+//			return true;
+//		if (obj == null)
+//			return false;
+//		if (getClass() != obj.getClass())
+//			return false;
+//		Usuario other = (Usuario) obj;
+//		if (codigoUsuario != other.codigoUsuario)
+//			return false;
+//		if (cpf == null) {
+//			if (other.cpf != null)
+//				return false;
+//		} else if (!cpf.equals(other.cpf))
+//			return false;
+//
+//		return true;
+//	}
 
 }

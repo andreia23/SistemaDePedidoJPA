@@ -1,9 +1,12 @@
 package modelo;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -14,12 +17,15 @@ import javax.persistence.OneToMany;
 import org.eclipse.persistence.nosql.annotations.DataFormatType;
 import org.eclipse.persistence.nosql.annotations.NoSql;
 
+import daojpa.DAOEndereco;
+
 @Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)	//Obrigatorio para mongodb (heran�a)
+@EntityListeners( DAOEndereco.class )  						//Exemplo de trigger
 @NoSql(dataFormat=DataFormatType.MAPPED)  //obrigatorio para mongodb
 public class Endereco {
 	@Id
 	@GeneratedValue
+	@Column(name="_id")		//obrigatorio no mongodb
 	private String codEndereco;
 	private String cidade;
 	private String bairro;
@@ -30,13 +36,13 @@ public class Endereco {
 			cascade= {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE}, 
 			orphanRemoval=true,    //mongodb nao utiliza este parametro
 			fetch=FetchType.LAZY)  //obrigatorio no mongodb
-	private ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
+	private List<Usuario> usuarios= new ArrayList<>();
 
 	@OneToMany(	mappedBy="enderecoEntrega", 
 			cascade= {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE}, 
 			orphanRemoval=true,    //mongodb nao utiliza este parametro
 			fetch=FetchType.LAZY)  //obrigatorio no mongodb
-	private ArrayList<Pedido> pedidos = new ArrayList<Pedido>();
+	private List<Pedido> pedidos = new ArrayList<>();
 
 	public Endereco() {
 		super();
@@ -90,7 +96,7 @@ public class Endereco {
 		this.cidade = cidade;
 	}
 
-	public ArrayList<Pedido> getPedidos() {
+	public List<Pedido> getPedidos() {
 		return pedidos;
 	}
 
@@ -98,7 +104,7 @@ public class Endereco {
 		this.pedidos = pedidos;
 	}
 
-	public ArrayList<Usuario> getUsuarios() {
+	public List<Usuario> getUsuarios() {
 		return usuarios;
 	}
 

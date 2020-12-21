@@ -6,8 +6,9 @@ package aplicacaoConsole;
  *
  */
 
-import modelo.Usuario;
 import fachada.Fachada;
+import modelo.Pedido;
+import modelo.Usuario;
 
 
 
@@ -17,13 +18,14 @@ public class Cadastrar {
 		try {
 			Fachada.inicializar();
 			Usuario u;
+			Pedido p;
 			
-//			System.out.println("cadastrando...");
-			u =Fachada.cadastrarUsuario("Tom Sousa", "0909", "9999999", "tom@ifpb", "8888", "Jampa", "Centro", "Rua tal", "68");
+			System.out.println("cadastrando...");
+			u =Fachada.cadastrarUsuario("Damiana Sousa", "1111", "9999999", "dami@ifpb", "8888", "Baiê", "Centro", "Rua tal", "68");
 			System.out.println(u);
 //			
 			//TESTAR LOGIN
-			u = Fachada.login("tom@ifpb", "8888");
+			u = Fachada.login("dami@ifpb", "8888");
 			System.out.println("pessoa logada =>" + Fachada.getLogado());
 //			
 			//TESTAR REALIZAR PEDIDO COM ENDERECO CADASTRADO DO USUARIO
@@ -31,7 +33,7 @@ public class Cadastrar {
 //			System.out.println("pedido feito com sucesso=>" + Fachada.getLogado().getPedidos());
 			
 //			//TESTAR REALIZAR PEDIDO
-			Fachada.realizarPedido("Patos", "Centro", "Rua tal", "68", 10, "Peixe", 20.80, 25.90);
+			p = Fachada.realizarPedido("Lisboa", "Centro", "Rua tal", "68", 10, "Peixe", 20.80, 25.90);
 			System.out.println("pedido feito com sucesso=>" + Fachada.getLogado().getPedidos());
 //			
 

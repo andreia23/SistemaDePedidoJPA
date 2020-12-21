@@ -1,23 +1,28 @@
 package modelo;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import org.eclipse.persistence.nosql.annotations.DataFormatType;
 import org.eclipse.persistence.nosql.annotations.NoSql;
 
+import daojpa.DAOPedido;
+
+
+
+
 @Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)	//Obrigatorio para mongodb (heran�a)
+@EntityListeners( DAOPedido.class )  						//Exemplo de trigger
 @NoSql(dataFormat=DataFormatType.MAPPED)     //obrigatorio mongodb
 public class Pedido {
 
@@ -37,7 +42,7 @@ public class Pedido {
 			cascade= {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE}, 
 			orphanRemoval=true,    //mongodb nao utiliza este parametro
 			fetch=FetchType.LAZY)
-	private ArrayList<Produto> produtos = new ArrayList<Produto>();
+	private List<Produto> produtos = new ArrayList<>();
 
 	public Pedido() {
 
@@ -98,7 +103,7 @@ public class Pedido {
 		return null;
 	}
 
-	public ArrayList<Produto> getprodutos() {
+	public List<Produto> getprodutos() {
 		return produtos;
 	}
 

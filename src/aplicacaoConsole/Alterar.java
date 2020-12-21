@@ -18,10 +18,10 @@ public class Alterar {
 		try {
 
 			// TESTAR ALTERAR DADOS DO PEDIDO
-			Fachada.alterarPedido(3, "Vale", "Inacio", "09");
+//			Fachada.alterarPedido(3, "Vale", "Inacio", "09");
 
 			//ALTERAR DADOS DE USUÁRIO NÃO LOGADO
-			Fachada.alterarDadosNaoLogado("0909", "Andreia", "andreia@ifpb", "9999");
+			Fachada.alterarDadosNaoLogado("1111", "Andreia", "andreia@ifpb", "9999");
 			
 			
 

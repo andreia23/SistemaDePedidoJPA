@@ -1,80 +1,104 @@
-[EL Fine]: server: 2020-12-19 15:53:23.726--Thread(Thread[main,5,main])--Configured server platform: org.eclipse.persistence.platform.server.NoServerPlatform
-[EL Config]: metadata: 2020-12-19 15:53:23.909--ServerSession(170144208)--Thread(Thread[main,5,main])--The access type for the persistent class [class modelo.Produto] is set to [FIELD].
-[EL Config]: metadata: 2020-12-19 15:53:23.952--ServerSession(170144208)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to one mapping element [field pedido] is being defaulted to: class modelo.Pedido.
-[EL Config]: metadata: 2020-12-19 15:53:23.955--ServerSession(170144208)--Thread(Thread[main,5,main])--The access type for the persistent class [class modelo.Endereco] is set to [FIELD].
-[EL Config]: metadata: 2020-12-19 15:53:23.959--ServerSession(170144208)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to many mapping element [field pedidos] is being defaulted to: class modelo.Pedido.
-[EL Config]: metadata: 2020-12-19 15:53:23.963--ServerSession(170144208)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to many mapping element [field usuarios] is being defaulted to: class modelo.Usuario.
-[EL Config]: metadata: 2020-12-19 15:53:23.964--ServerSession(170144208)--Thread(Thread[main,5,main])--The access type for the persistent class [class modelo.Pedido] is set to [FIELD].
-[EL Config]: metadata: 2020-12-19 15:53:23.965--ServerSession(170144208)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to many mapping element [field produtos] is being defaulted to: class modelo.Produto.
-[EL Config]: metadata: 2020-12-19 15:53:23.966--ServerSession(170144208)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to one mapping element [field enderecoEntrega] is being defaulted to: class modelo.Endereco.
-[EL Config]: metadata: 2020-12-19 15:53:23.967--ServerSession(170144208)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to one mapping element [field usuario] is being defaulted to: class modelo.Usuario.
-[EL Config]: metadata: 2020-12-19 15:53:23.968--ServerSession(170144208)--Thread(Thread[main,5,main])--The access type for the persistent class [class modelo.Usuario] is set to [FIELD].
-[EL Config]: metadata: 2020-12-19 15:53:23.971--ServerSession(170144208)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to one mapping element [field endereco] is being defaulted to: class modelo.Endereco.
-[EL Config]: metadata: 2020-12-19 15:53:23.972--ServerSession(170144208)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to many mapping element [field pedidos] is being defaulted to: class modelo.Pedido.
-[EL Config]: metadata: 2020-12-19 15:53:23.973--ServerSession(170144208)--Thread(Thread[main,5,main])--The alias name for the entity class [class modelo.Produto] is being defaulted to: Produto.
-[EL Config]: metadata: 2020-12-19 15:53:23.989--ServerSession(170144208)--Thread(Thread[main,5,main])--The column name for element [quantidadeProduto] is being defaulted to: QUANTIDADEPRODUTO.
-[EL Config]: metadata: 2020-12-19 15:53:23.99--ServerSession(170144208)--Thread(Thread[main,5,main])--The column name for element [valorProduto] is being defaulted to: VALORPRODUTO.
-[EL Config]: metadata: 2020-12-19 15:53:23.991--ServerSession(170144208)--Thread(Thread[main,5,main])--The column name for element [nomeProduto] is being defaulted to: NOMEPRODUTO.
-[EL Config]: metadata: 2020-12-19 15:53:23.991--ServerSession(170144208)--Thread(Thread[main,5,main])--The column name for element [versao] is being defaulted to: VERSAO.
-[EL Config]: metadata: 2020-12-19 15:53:23.993--ServerSession(170144208)--Thread(Thread[main,5,main])--The alias name for the entity class [class modelo.Endereco] is being defaulted to: Endereco.
-[EL Config]: metadata: 2020-12-19 15:53:23.994--ServerSession(170144208)--Thread(Thread[main,5,main])--The column name for element [cidade] is being defaulted to: CIDADE.
-[EL Config]: metadata: 2020-12-19 15:53:23.994--ServerSession(170144208)--Thread(Thread[main,5,main])--The column name for element [numero] is being defaulted to: NUMERO.
-[EL Config]: metadata: 2020-12-19 15:53:23.994--ServerSession(170144208)--Thread(Thread[main,5,main])--The column name for element [bairro] is being defaulted to: BAIRRO.
-[EL Config]: metadata: 2020-12-19 15:53:23.995--ServerSession(170144208)--Thread(Thread[main,5,main])--The column name for element [codEndereco] is being defaulted to: CODENDERECO.
-[EL Config]: metadata: 2020-12-19 15:53:23.995--ServerSession(170144208)--Thread(Thread[main,5,main])--The column name for element [rua] is being defaulted to: RUA.
-[EL Config]: metadata: 2020-12-19 15:53:23.995--ServerSession(170144208)--Thread(Thread[main,5,main])--The alias name for the entity class [class modelo.Pedido] is being defaulted to: Pedido.
-[EL Config]: metadata: 2020-12-19 15:53:23.996--ServerSession(170144208)--Thread(Thread[main,5,main])--The column name for element [valorPedido] is being defaulted to: VALORPEDIDO.
-[EL Config]: metadata: 2020-12-19 15:53:23.996--ServerSession(170144208)--Thread(Thread[main,5,main])--The alias name for the entity class [class modelo.Usuario] is being defaulted to: Usuario.
-[EL Config]: metadata: 2020-12-19 15:53:23.997--ServerSession(170144208)--Thread(Thread[main,5,main])--The column name for element [fone] is being defaulted to: FONE.
-[EL Config]: metadata: 2020-12-19 15:53:23.997--ServerSession(170144208)--Thread(Thread[main,5,main])--The column name for element [nomeUsuario] is being defaulted to: NOMEUSUARIO.
-[EL Config]: metadata: 2020-12-19 15:53:23.997--ServerSession(170144208)--Thread(Thread[main,5,main])--The column name for element [senha] is being defaulted to: SENHA.
-[EL Config]: metadata: 2020-12-19 15:53:23.998--ServerSession(170144208)--Thread(Thread[main,5,main])--The column name for element [nascimento] is being defaulted to: NASCIMENTO.
-[EL Config]: metadata: 2020-12-19 15:53:23.998--ServerSession(170144208)--Thread(Thread[main,5,main])--The column name for element [cpf] is being defaulted to: CPF.
-[EL Config]: metadata: 2020-12-19 15:53:23.999--ServerSession(170144208)--Thread(Thread[main,5,main])--The column name for element [email] is being defaulted to: EMAIL.
-[EL Config]: metadata: 2020-12-19 15:53:24.01--ServerSession(170144208)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field pedido] is being defaulted to: _id.
-[EL Config]: metadata: 2020-12-19 15:53:24.011--ServerSession(170144208)--Thread(Thread[main,5,main])--The foreign key column name for the mapping element [pedido] is being defaulted to: PEDIDO__id.
-[EL Config]: metadata: 2020-12-19 15:53:24.012--ServerSession(170144208)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field enderecoEntrega] is being defaulted to: CODENDERECO.
-[EL Config]: metadata: 2020-12-19 15:53:24.012--ServerSession(170144208)--Thread(Thread[main,5,main])--The foreign key column name for the mapping element [enderecoEntrega] is being defaulted to: ENDERECOENTREGA_CODENDERECO.
-[EL Config]: metadata: 2020-12-19 15:53:24.012--ServerSession(170144208)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field usuario] is being defaulted to: _id.
-[EL Config]: metadata: 2020-12-19 15:53:24.012--ServerSession(170144208)--Thread(Thread[main,5,main])--The foreign key column name for the mapping element [usuario] is being defaulted to: USUARIO__id.
-[EL Config]: metadata: 2020-12-19 15:53:24.013--ServerSession(170144208)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field endereco] is being defaulted to: CODENDERECO.
-[EL Config]: metadata: 2020-12-19 15:53:24.013--ServerSession(170144208)--Thread(Thread[main,5,main])--The foreign key column name for the mapping element [endereco] is being defaulted to: ENDERECO_CODENDERECO.
-[EL Warning]: metadata: 2020-12-19 15:53:24.03--ServerSession(170144208)--Thread(Thread[main,5,main])--Element [field pedidos] within entity class [class modelo.Endereco] uses a collection type [class java.util.ArrayList] when the JPA specification only supports java.util.Collection, java.util.Set, java.util.List, or java.util.Map.  This type is supported with eager loading; using lazy loading with this collection type requires additional configuration and an IndirectContainer implementation that extends [class java.util.ArrayList] or setting the mapping to use basic indirection and the type to be ValueholderInterface.
-[EL Config]: metadata: 2020-12-19 15:53:24.031--ServerSession(170144208)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field pedidos] is being defaulted to: _id.
-[EL Config]: metadata: 2020-12-19 15:53:24.031--ServerSession(170144208)--Thread(Thread[main,5,main])--The foreign key column name for the mapping element [pedidos] is being defaulted to: PEDIDOS__id.
-[EL Warning]: metadata: 2020-12-19 15:53:24.032--ServerSession(170144208)--Thread(Thread[main,5,main])--Element [field usuarios] within entity class [class modelo.Endereco] uses a collection type [class java.util.ArrayList] when the JPA specification only supports java.util.Collection, java.util.Set, java.util.List, or java.util.Map.  This type is supported with eager loading; using lazy loading with this collection type requires additional configuration and an IndirectContainer implementation that extends [class java.util.ArrayList] or setting the mapping to use basic indirection and the type to be ValueholderInterface.
-[EL Config]: metadata: 2020-12-19 15:53:24.033--ServerSession(170144208)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field usuarios] is being defaulted to: _id.
-[EL Config]: metadata: 2020-12-19 15:53:24.033--ServerSession(170144208)--Thread(Thread[main,5,main])--The foreign key column name for the mapping element [usuarios] is being defaulted to: USUARIOS__id.
-[EL Warning]: metadata: 2020-12-19 15:53:24.034--ServerSession(170144208)--Thread(Thread[main,5,main])--Element [field produtos] within entity class [class modelo.Pedido] uses a collection type [class java.util.ArrayList] when the JPA specification only supports java.util.Collection, java.util.Set, java.util.List, or java.util.Map.  This type is supported with eager loading; using lazy loading with this collection type requires additional configuration and an IndirectContainer implementation that extends [class java.util.ArrayList] or setting the mapping to use basic indirection and the type to be ValueholderInterface.
-[EL Config]: metadata: 2020-12-19 15:53:24.035--ServerSession(170144208)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field produtos] is being defaulted to: _id.
-[EL Config]: metadata: 2020-12-19 15:53:24.035--ServerSession(170144208)--Thread(Thread[main,5,main])--The foreign key column name for the mapping element [produtos] is being defaulted to: PRODUTOS__id.
-[EL Warning]: metadata: 2020-12-19 15:53:24.036--ServerSession(170144208)--Thread(Thread[main,5,main])--Element [field pedidos] within entity class [class modelo.Usuario] uses a collection type [class java.util.ArrayList] when the JPA specification only supports java.util.Collection, java.util.Set, java.util.List, or java.util.Map.  This type is supported with eager loading; using lazy loading with this collection type requires additional configuration and an IndirectContainer implementation that extends [class java.util.ArrayList] or setting the mapping to use basic indirection and the type to be ValueholderInterface.
-[EL Config]: metadata: 2020-12-19 15:53:24.037--ServerSession(170144208)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field pedidos] is being defaulted to: _id.
-[EL Config]: metadata: 2020-12-19 15:53:24.038--ServerSession(170144208)--Thread(Thread[main,5,main])--The foreign key column name for the mapping element [pedidos] is being defaulted to: PEDIDOS__id.
-[EL Info]: 2020-12-19 15:53:24.095--ServerSession(170144208)--Thread(Thread[main,5,main])--EclipseLink, version: Eclipse Persistence Services - 2.7.7.v20200504-69f2c2b80d
-[EL Fine]: connection: 2020-12-19 15:53:24.098--ServerSession(170144208)--Connection(136393487)--Thread(Thread[main,5,main])--connecting(EISLogin(
+[EL Fine]: server: 2020-12-20 21:41:18.378--Thread(Thread[main,5,main])--Configured server platform: org.eclipse.persistence.platform.server.NoServerPlatform
+[EL Config]: metadata: 2020-12-20 21:41:18.46--ServerSession(1866850137)--Thread(Thread[main,5,main])--The access type for the persistent class [class modelo.Produto] is set to [FIELD].
+[EL Config]: metadata: 2020-12-20 21:41:18.477--ServerSession(1866850137)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to one mapping element [field pedido] is being defaulted to: class modelo.Pedido.
+[EL Config]: metadata: 2020-12-20 21:41:18.48--ServerSession(1866850137)--Thread(Thread[main,5,main])--The access type for the persistent class [class modelo.Endereco] is set to [FIELD].
+[EL Config]: metadata: 2020-12-20 21:41:18.482--ServerSession(1866850137)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to many mapping element [field pedidos] is being defaulted to: class modelo.Pedido.
+[EL Config]: metadata: 2020-12-20 21:41:18.483--ServerSession(1866850137)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to many mapping element [field usuarios] is being defaulted to: class modelo.Usuario.
+[EL Config]: metadata: 2020-12-20 21:41:18.483--ServerSession(1866850137)--Thread(Thread[main,5,main])--The access type for the persistent class [class modelo.Pedido] is set to [FIELD].
+[EL Config]: metadata: 2020-12-20 21:41:18.484--ServerSession(1866850137)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to many mapping element [field produtos] is being defaulted to: class modelo.Produto.
+[EL Config]: metadata: 2020-12-20 21:41:18.484--ServerSession(1866850137)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to one mapping element [field enderecoEntrega] is being defaulted to: class modelo.Endereco.
+[EL Config]: metadata: 2020-12-20 21:41:18.484--ServerSession(1866850137)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to one mapping element [field usuario] is being defaulted to: class modelo.Usuario.
+[EL Config]: metadata: 2020-12-20 21:41:18.484--ServerSession(1866850137)--Thread(Thread[main,5,main])--The access type for the persistent class [class modelo.Usuario] is set to [FIELD].
+[EL Config]: metadata: 2020-12-20 21:41:18.484--ServerSession(1866850137)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to one mapping element [field endereco] is being defaulted to: class modelo.Endereco.
+[EL Config]: metadata: 2020-12-20 21:41:18.485--ServerSession(1866850137)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to many mapping element [field pedidos] is being defaulted to: class modelo.Pedido.
+[EL Config]: metadata: 2020-12-20 21:41:18.485--ServerSession(1866850137)--Thread(Thread[main,5,main])--The alias name for the entity class [class modelo.Produto] is being defaulted to: Produto.
+[EL Config]: metadata: 2020-12-20 21:41:18.491--ServerSession(1866850137)--Thread(Thread[main,5,main])--The column name for element [quantidadeProduto] is being defaulted to: QUANTIDADEPRODUTO.
+[EL Config]: metadata: 2020-12-20 21:41:18.492--ServerSession(1866850137)--Thread(Thread[main,5,main])--The column name for element [valorProduto] is being defaulted to: VALORPRODUTO.
+[EL Config]: metadata: 2020-12-20 21:41:18.492--ServerSession(1866850137)--Thread(Thread[main,5,main])--The column name for element [nomeProduto] is being defaulted to: NOMEPRODUTO.
+[EL Config]: metadata: 2020-12-20 21:41:18.492--ServerSession(1866850137)--Thread(Thread[main,5,main])--The column name for element [versao] is being defaulted to: VERSAO.
+[EL Config]: metadata: 2020-12-20 21:41:18.493--ServerSession(1866850137)--Thread(Thread[main,5,main])--The alias name for the entity class [class modelo.Endereco] is being defaulted to: Endereco.
+[EL Config]: metadata: 2020-12-20 21:41:18.493--ServerSession(1866850137)--Thread(Thread[main,5,main])--The column name for element [cidade] is being defaulted to: CIDADE.
+[EL Config]: metadata: 2020-12-20 21:41:18.494--ServerSession(1866850137)--Thread(Thread[main,5,main])--The column name for element [numero] is being defaulted to: NUMERO.
+[EL Config]: metadata: 2020-12-20 21:41:18.494--ServerSession(1866850137)--Thread(Thread[main,5,main])--The column name for element [bairro] is being defaulted to: BAIRRO.
+[EL Config]: metadata: 2020-12-20 21:41:18.494--ServerSession(1866850137)--Thread(Thread[main,5,main])--The column name for element [rua] is being defaulted to: RUA.
+[EL Config]: metadata: 2020-12-20 21:41:18.494--ServerSession(1866850137)--Thread(Thread[main,5,main])--The alias name for the entity class [class modelo.Pedido] is being defaulted to: Pedido.
+[EL Config]: metadata: 2020-12-20 21:41:18.494--ServerSession(1866850137)--Thread(Thread[main,5,main])--The column name for element [valorPedido] is being defaulted to: VALORPEDIDO.
+[EL Config]: metadata: 2020-12-20 21:41:18.494--ServerSession(1866850137)--Thread(Thread[main,5,main])--The alias name for the entity class [class modelo.Usuario] is being defaulted to: Usuario.
+[EL Config]: metadata: 2020-12-20 21:41:18.495--ServerSession(1866850137)--Thread(Thread[main,5,main])--The column name for element [fone] is being defaulted to: FONE.
+[EL Config]: metadata: 2020-12-20 21:41:18.495--ServerSession(1866850137)--Thread(Thread[main,5,main])--The column name for element [nomeUsuario] is being defaulted to: NOMEUSUARIO.
+[EL Config]: metadata: 2020-12-20 21:41:18.495--ServerSession(1866850137)--Thread(Thread[main,5,main])--The column name for element [senha] is being defaulted to: SENHA.
+[EL Config]: metadata: 2020-12-20 21:41:18.495--ServerSession(1866850137)--Thread(Thread[main,5,main])--The column name for element [cpf] is being defaulted to: CPF.
+[EL Config]: metadata: 2020-12-20 21:41:18.495--ServerSession(1866850137)--Thread(Thread[main,5,main])--The column name for element [email] is being defaulted to: EMAIL.
+[EL Config]: metadata: 2020-12-20 21:41:18.5--ServerSession(1866850137)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field pedido] is being defaulted to: _id.
+[EL Config]: metadata: 2020-12-20 21:41:18.501--ServerSession(1866850137)--Thread(Thread[main,5,main])--The foreign key column name for the mapping element [pedido] is being defaulted to: PEDIDO__id.
+[EL Config]: metadata: 2020-12-20 21:41:18.501--ServerSession(1866850137)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field enderecoEntrega] is being defaulted to: _id.
+[EL Config]: metadata: 2020-12-20 21:41:18.501--ServerSession(1866850137)--Thread(Thread[main,5,main])--The foreign key column name for the mapping element [enderecoEntrega] is being defaulted to: ENDERECOENTREGA__id.
+[EL Config]: metadata: 2020-12-20 21:41:18.501--ServerSession(1866850137)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field usuario] is being defaulted to: _id.
+[EL Config]: metadata: 2020-12-20 21:41:18.501--ServerSession(1866850137)--Thread(Thread[main,5,main])--The foreign key column name for the mapping element [usuario] is being defaulted to: USUARIO__id.
+[EL Config]: metadata: 2020-12-20 21:41:18.501--ServerSession(1866850137)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field endereco] is being defaulted to: _id.
+[EL Config]: metadata: 2020-12-20 21:41:18.501--ServerSession(1866850137)--Thread(Thread[main,5,main])--The foreign key column name for the mapping element [endereco] is being defaulted to: ENDERECO__id.
+[EL Config]: metadata: 2020-12-20 21:41:18.51--ServerSession(1866850137)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field pedidos] is being defaulted to: _id.
+[EL Config]: metadata: 2020-12-20 21:41:18.51--ServerSession(1866850137)--Thread(Thread[main,5,main])--The foreign key column name for the mapping element [pedidos] is being defaulted to: PEDIDOS__id.
+[EL Config]: metadata: 2020-12-20 21:41:18.511--ServerSession(1866850137)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field usuarios] is being defaulted to: _id.
+[EL Config]: metadata: 2020-12-20 21:41:18.511--ServerSession(1866850137)--Thread(Thread[main,5,main])--The foreign key column name for the mapping element [usuarios] is being defaulted to: USUARIOS__id.
+[EL Config]: metadata: 2020-12-20 21:41:18.511--ServerSession(1866850137)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field produtos] is being defaulted to: _id.
+[EL Config]: metadata: 2020-12-20 21:41:18.512--ServerSession(1866850137)--Thread(Thread[main,5,main])--The foreign key column name for the mapping element [produtos] is being defaulted to: PRODUTOS__id.
+[EL Config]: metadata: 2020-12-20 21:41:18.512--ServerSession(1866850137)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field pedidos] is being defaulted to: _id.
+[EL Config]: metadata: 2020-12-20 21:41:18.512--ServerSession(1866850137)--Thread(Thread[main,5,main])--The foreign key column name for the mapping element [pedidos] is being defaulted to: PEDIDOS__id.
+[EL Info]: 2020-12-20 21:41:18.537--ServerSession(1866850137)--Thread(Thread[main,5,main])--EclipseLink, version: Eclipse Persistence Services - 2.7.7.v20200504-69f2c2b80d
+[EL Fine]: connection: 2020-12-20 21:41:18.538--ServerSession(1866850137)--Connection(225672073)--Thread(Thread[main,5,main])--connecting(EISLogin(
 	platform=> MongoPlatform
 	user name=> ""
 	MongoConnectionSpec()
 ))
-[EL Config]: connection: 2020-12-19 15:53:24.747--ServerSession(170144208)--Connection(1275009283)--Thread(Thread[main,5,main])--Connected: 
+[EL Config]: connection: 2020-12-20 21:41:18.805--ServerSession(1866850137)--Connection(547441493)--Thread(Thread[main,5,main])--Connected: 
 	User: 
 	Database: 3.6.3  Version: 3.6.3
-[EL Warning]: metadata: 2020-12-19 15:53:24.755--ServerSession(170144208)--Thread(Thread[main,5,main])--Reverting the lazy setting on the OneToOne or ManyToOne attribute [pedidos] for the entity class [class modelo.Usuario] since weaving was not enabled or did not occur.
-[EL Warning]: metadata: 2020-12-19 15:53:24.756--ServerSession(170144208)--Thread(Thread[main,5,main])--Reverting the lazy setting on the OneToOne or ManyToOne attribute [pedidos] for the entity class [class modelo.Endereco] since weaving was not enabled or did not occur.
-[EL Warning]: metadata: 2020-12-19 15:53:24.756--ServerSession(170144208)--Thread(Thread[main,5,main])--Reverting the lazy setting on the OneToOne or ManyToOne attribute [usuarios] for the entity class [class modelo.Endereco] since weaving was not enabled or did not occur.
-[EL Warning]: metadata: 2020-12-19 15:53:24.757--ServerSession(170144208)--Thread(Thread[main,5,main])--Reverting the lazy setting on the OneToOne or ManyToOne attribute [produtos] for the entity class [class modelo.Pedido] since weaving was not enabled or did not occur.
-[EL Fine]: connection: 2020-12-19 15:53:24.801--ServerSession(170144208)--Thread(Thread[main,5,main])--/file:/home/andreia/IFPB/POB/workspace-IFPB/SistemaDePedidoJPA/target/classes/_agenda-eclipselink-postgres login successful
-[EL Fine]: sql: 2020-12-19 15:53:25.041--ServerSession(170144208)--Connection(1275009283)--Thread(Thread[main,5,main])--Executing MappedInteraction()
+[EL Fine]: connection: 2020-12-20 21:41:18.829--ServerSession(1866850137)--Thread(Thread[main,5,main])--/file:/home/andreia/IFPB/POB/workspace-IFPB/SistemaDePedidoJPA/target/classes/_eclipselink-mongodb login successful
+[EL Fine]: sql: 2020-12-20 21:41:18.92--ServerSession(1866850137)--Connection(547441493)--Thread(Thread[main,5,main])--Executing MappedInteraction()
 	spec => null
 	properties => {mongo.operation=FIND, mongo.collection=USUARIO}
 	input => [DatabaseRecord()]
-[EL Fine]: sql: 2020-12-19 15:53:25.085--ServerSession(170144208)--Connection(1275009283)--Thread(Thread[main,5,main])--Executing MappedInteraction()
+[EL Fine]: sql: 2020-12-20 21:41:18.936--ServerSession(1866850137)--Connection(547441493)--Thread(Thread[main,5,main])--Executing MappedInteraction()
 	spec => null
 	properties => {mongo.operation=FIND, mongo.collection=ENDERECO}
-	input => [5FDE4985698ACA5F2C11B31A]
-[EL Warning]: 2020-12-19 15:53:25.09--ServerSession(170144208)--Thread(Thread[main,5,main])--java.lang.ClassCastException: class org.eclipse.persistence.sessions.DatabaseRecord cannot be cast to class org.eclipse.persistence.oxm.record.XMLRecord (org.eclipse.persistence.sessions.DatabaseRecord and org.eclipse.persistence.oxm.record.XMLRecord are in unnamed module of loader 'app')
-[EL Warning]: 2020-12-19 15:53:25.09--UnitOfWork(1599823012)--Thread(Thread[main,5,main])--java.lang.ClassCastException: class org.eclipse.persistence.sessions.DatabaseRecord cannot be cast to class org.eclipse.persistence.oxm.record.XMLRecord (org.eclipse.persistence.sessions.DatabaseRecord and org.eclipse.persistence.oxm.record.XMLRecord are in unnamed module of loader 'app')
-[EL Fine]: connection: 2020-12-19 15:53:25.092--ServerSession(170144208)--Connection(1275009283)--Thread(Thread[main,5,main])--disconnect
-[EL Fine]: connection: 2020-12-19 15:53:25.093--ServerSession(170144208)--Thread(Thread[main,5,main])--/file:/home/andreia/IFPB/POB/workspace-IFPB/SistemaDePedidoJPA/target/classes/_agenda-eclipselink-postgres logout successful
-[EL Fine]: connection: 2020-12-19 15:53:25.093--ServerSession(170144208)--Connection(1275009283)--Thread(Thread[main,5,main])--disconnect
+	input => [5FDFECF2924E230763EA2451]
+[EL Fine]: sql: 2020-12-20 21:41:18.94--ServerSession(1866850137)--Connection(547441493)--Thread(Thread[main,5,main])--Executing MappedInteraction()
+	spec => null
+	properties => {mongo.operation=FIND, mongo.collection=ENDERECO}
+	input => [5FDFEF1ABC45B31A2807F8BB]
+[EL Fine]: sql: 2020-12-20 21:41:18.942--ServerSession(1866850137)--Connection(547441493)--Thread(Thread[main,5,main])--Executing MappedInteraction()
+	spec => null
+	properties => {mongo.operation=FIND, mongo.collection=PEDIDO}
+	input => [DatabaseRecord(
+	PEDIDO._id => 5FDFECF2924E230763EA2452)]
+[EL Fine]: sql: 2020-12-20 21:41:18.944--ServerSession(1866850137)--Connection(547441493)--Thread(Thread[main,5,main])--Executing MappedInteraction()
+	spec => null
+	properties => {mongo.operation=FIND, mongo.collection=ENDERECO}
+	input => [5FDFECF2924E230763EA2453]
+[EL Fine]: sql: 2020-12-20 21:41:18.948--ServerSession(1866850137)--Connection(547441493)--Thread(Thread[main,5,main])--Executing MappedInteraction()
+	spec => null
+	properties => {mongo.operation=FIND, mongo.collection=PEDIDO}
+	input => [DatabaseRecord(
+	PEDIDO._id => 5FDFEF1ABC45B31A2807F8BC)]
+[EL Fine]: sql: 2020-12-20 21:41:18.949--ServerSession(1866850137)--Connection(547441493)--Thread(Thread[main,5,main])--Executing MappedInteraction()
+	spec => null
+	properties => {mongo.operation=FIND, mongo.collection=ENDERECO}
+	input => [5FDFEF1ABC45B31A2807F8BD]
+[EL Fine]: sql: 2020-12-20 21:41:18.953--ServerSession(1866850137)--Connection(547441493)--Thread(Thread[main,5,main])--Executing MappedInteraction()
+	spec => null
+	properties => {mongo.operation=FIND, mongo.collection=PEDIDO}
+	input => [DatabaseRecord()]
+[EL Fine]: sql: 2020-12-20 21:41:18.956--ServerSession(1866850137)--Connection(547441493)--Thread(Thread[main,5,main])--Executing MappedInteraction()
+	spec => null
+	properties => {mongo.operation=FIND, mongo.collection=PRODUTO}
+	input => [DatabaseRecord(
+	PRODUTO._id => 5FDFECF2924E230763EA2454)]
+[EL Fine]: sql: 2020-12-20 21:41:18.959--ServerSession(1866850137)--Connection(547441493)--Thread(Thread[main,5,main])--Executing MappedInteraction()
+	spec => null
+	properties => {mongo.operation=FIND, mongo.collection=PRODUTO}
+	input => [DatabaseRecord(
+	PRODUTO._id => 5FDFEF1ABC45B31A2807F8BE)]
+[EL Fine]: connection: 2020-12-20 21:41:18.961--ServerSession(1866850137)--Connection(547441493)--Thread(Thread[main,5,main])--disconnect
+[EL Fine]: connection: 2020-12-20 21:41:18.961--ServerSession(1866850137)--Thread(Thread[main,5,main])--/file:/home/andreia/IFPB/POB/workspace-IFPB/SistemaDePedidoJPA/target/classes/_eclipselink-mongodb logout successful
+[EL Fine]: connection: 2020-12-20 21:41:18.961--ServerSession(1866850137)--Connection(547441493)--Thread(Thread[main,5,main])--disconnect

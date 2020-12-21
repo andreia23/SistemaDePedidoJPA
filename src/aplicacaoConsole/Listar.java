@@ -8,27 +8,32 @@ package aplicacaoConsole;
 
 import modelo.Pedido;
 import modelo.Usuario;
+
+import java.util.List;
+
 import fachada.Fachada;
 
 
 public class Listar {
 
 	public Listar(){
-		try {
-			Fachada.inicializar();
-			
-			System.out.println("Listagem de usuários:");
-			for(Usuario p : Fachada.listarUsuarios())		
-				System.out.println(p);
-			
-			System.out.println("\nListagem de pedidos:");
-			for(Pedido t : Fachada.listarPedidos())	
-				System.out.println(t);
-		} catch (Exception e) {
-			System.out.println(e.getMessage());
+		Fachada.inicializar();
+		
+		List<Usuario> usuarios = Fachada.listarUsuarios();
+		String texto="-----------listagem de Usuarios-----------\n";
+		for (Usuario pe : usuarios) {
+			texto += pe +"\n";
 		}
+		System.out.println(texto);
+		
+		List<Pedido> pedidos = Fachada.listarPedidos();
+		texto="-----------listagem de Pedidos-----------\n";
+		for (Pedido t : pedidos) {
+			texto += t +"\n";
+		}
+		System.out.println(texto);
+		
 		Fachada.finalizar();
-		System.out.println("fim do programa");
 	}
 
 	//=================================================

@@ -15,11 +15,8 @@ public class Consultar {
 		Fachada.inicializar();
 		try {
 
-			System.out.println(Fachada.consultarUsuarioPorParteNome("lu"));
-			System.out.println(Fachada.consultarPessoasNPedidos(3));
-			System.out.println(Fachada.consultarPedidosPorId(8));
-			System.out.println(Fachada.consultartotalDeUsuarios());
-			System.out.println(Fachada.consultartotalDePedidos());
+			System.out.println(Fachada.consultarUsuarioPorParteNome("ana"));
+		
 
 		} catch (Exception e) {
 			System.out.println(e.getMessage());

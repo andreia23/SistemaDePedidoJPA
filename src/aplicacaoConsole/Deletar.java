@@ -18,7 +18,7 @@ public class Deletar {
 		try {
 
 			System.out.println("deletando...");
-			Fachada.excluirUsuario("6687");
+			Fachada.excluirUsuario("0909");
 //			Fachada2.excluirPedidoPessoa(2);
 
 			System.out.println("deletado");

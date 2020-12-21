@@ -2,6 +2,7 @@ package modelo;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
@@ -10,7 +11,11 @@ import javax.persistence.Version;
 import org.eclipse.persistence.nosql.annotations.DataFormatType;
 import org.eclipse.persistence.nosql.annotations.NoSql;
 
+import daojpa.DAOProduto;
+
+
 @Entity
+@EntityListeners( DAOProduto.class )  						//Exemplo de trigger
 @NoSql(dataFormat=DataFormatType.MAPPED)     //obrigatorio mongodb
 public class Produto {
 
